@@ -1,4 +1,4 @@
-FROM kuk13/aws-params-and-secrets-lambda-extensions-arm64:11.0 AS extension-layer
+FROM kuk13/aws-params-and-secrets-lambda-extensions-alpine-arm64:11.0 AS extension-layer
 FROM public.ecr.aws/lambda/python:3.11
 # Layer Code
 

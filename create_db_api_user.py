@@ -73,13 +73,13 @@ def handler(event, context):
             connection.commit()
             raise exception
 
-    result = json.dumps({
-        "status": "OK",
-        "username": db_api_connection.username
-    })
     logger.info("Success, user %s created", db_api_connection.username)
-    # result = """{"status": "OK", "username": "{0}"}"""
-    return result
+
+    return {
+        "status": "OK",
+        "username": db_api_connection.username,
+        "secret_id": db_api_user_secret_id
+    }
 
 
 class DbConnectionSettings:
